@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Statistics</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}"> 
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+
+<div id="header_3">
+    {% if "user_id" in session %}
+        <h1>Meeting statistics</h1>
+        Database contains information about {{ called_count }} happened meetings and {{ canceled_count }} cancelled meetings
+    {% endif %}
+</div>
+
+<div id="menu-container">
+    <a href="/" class="bigger-link">Go back to the customer list</a>
+<hr>
+</div>
+
+<div id="buttons">
+    <form method="POST" action="/stats" class="form-container">
+
+        <label for="realization">Realization</label>
+        <select id="realization" name="realization" required>
+            <option value="" disabled selected>Select</option>
+            <option value="1">Called meetings</option>
+            <option value="2">Cancelled meetings</option>
+            <option value="1,2">Both types together</option>
+        </select>
+
+        <label for="execution_style">Meeting style</label>
+        <select id="execution_style" name="execution_style" required>
+            <option value="" disabled selected>Select</option>
+            <option value="1">Live meeting</option>
+            <option value="2">Teams meeting</option>
+            <option value="1,2">Both types together</option>
+        </select>
+
+        <label for="service">Service given</label>
+        <select id="service" name="service" required>
+            <option value="" disabled selected>Select</option>
+            <option value="1">Career Counselling</option>
+            <option value="2">Educational Counselling</option>
+            <option value="3">Digital Tool Counselling</option>
+            <option value="4">Other Counselling</option>
+            <option value="1,2,3,4">All services together</option>
+        </select>    
+
+        <label for="start_date">Start Date:</label>
+        <input type="date" id="start_date" name="start_date" required>
+
+        <label for="end_date">End Date:</label>
+        <input type="date" id="end_date" name="end_date" required>
+
+        <input type="submit" value="See statistics">
+    </form>
+</div>
+
+<div id="plot">
+    <script>
+        var plot_div = document.getElementById('plot');
+        plot_div.innerHTML = '{{ pic_0|safe }}';
+    </script>
+
+    <script>
+        var plot_div = document.getElementById('plot');
+        plot_div.innerHTML = '{{ pic_1|safe }}';
+    </script>
+    
+    <script>
+        var plot_div = document.getElementById('plot');
+        plot_div.innerHTML = '{{ pic_2|safe }}';
+    </script>
+</div>
+
+</body>
+</html>
+

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}"> 
+</head>
+<body>
+
+<div id="header_3">
+    <h1>Here is the previous notes from the customer {{ name }}</h1>
+    Number of notes from this customer: {{ number }} 
+</div>
+
+<div id="menu-container">
+<a href="/" class="bigger-link">Go back to the customer list</a>
+<hr>
+</div>
+
+<div id="customer-info-container">
+    {% if notes %}
+        {% for n in notes %}
+            <p>
+                <strong>Date of the note given</strong> 
+                <div class="bordered-area">{{ n.date }}</div><br>
+
+                {% set mapping_realization = {1: "Yes", 2: "No, it was cancelled"} %}
+                <strong>Did this meeting happen?</strong> 
+                <div class="bordered-area">{{ mapping_realization.get(n.realization_id) }}</div><br>
+
+                <strong>Notes from this meeting</strong> 
+                <div class="bordered-area">{{ n.notes }}</div><br>
+
+                <strong>Note giver</strong> 
+                <div class="bordered-area">{{ n.username }}</div><br>
+
+                {% set mapping_service = {1: "Career Counselling", 2: "Education Counselling", 3: "Digital Tools Counselling", 4: "Other Counselling"} %}
+                <strong>Service that was given</strong> 
+                <div class="bordered-area">{{ mapping_service.get(n.service_id) }}</div><br>
+
+                <strong>Customers path to this meeting</strong> 
+                <div class="bordered-area">{{ n.customer_path }}</div><br>
+
+                {% set mapping_execution = {1: "By live meeting", 2: "By teams meeting"} %}
+                <strong>How this meeting was executed</strong> 
+                <div class="bordered-area">{{ mapping_execution.get(n.execution_id) }}</div><br>
+
+                <br>
+            </p>
+        {% endfor %}
+    {% endif %}
+</div>
+
+</body>
+</html>
