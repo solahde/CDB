@@ -1,0 +1,152 @@
+/* Header section styles */
+
+#header_1 {
+    text-align: center; /* Center-align text */
+    padding: 20px; /* Add some padding for better visual appeal */
+    background-color: #36a2ee; /* Light blue background color */
+    margin-bottom: 10px; /* Add margin at the bottom of the header */
+}
+
+#header_2 {
+    text-align: center; 
+    padding: 20px; 
+    background-color: #ff6600; /* Orange background color */
+    margin-bottom: 10px; 
+}
+
+#header_3 {
+    text-align: center; 
+    padding: 20px; 
+    background-color: #01cb37; /* Orange background color */
+    margin-bottom: 10px; 
+}
+
+h1 {
+    margin: 0; /* Remove default margin for h1 */
+}
+
+/* ################################################## */
+
+/* Buttons styles */
+#buttons {
+    margin: 20px 0; /* Add margin for spacing */
+    display: flex;
+    justify-content: space-around; /* Center-align and evenly distribute buttons */
+}
+
+/* ################################################## */
+
+/* Link styles */
+
+.bigger-link {
+    font-size: 20px; /* Adjust the font size as needed */
+}
+
+.smaller-link {
+    font-size: 15px; /* Adjust the font size as needed */
+}
+
+/* ################################################## */
+
+/* Text styles */
+#text {
+    text-align: center; /* Center-align text */
+    padding: 20px; /* Add some padding for better visual appeal */
+    background-color: #f0f0f0; /* Light gray background color */
+}
+
+/* ################################################## */
+
+/* Container etc. styles */
+
+#menu-container {
+    width: 100%; /* Adjust the width as needed */
+    text-align: center; /* Center horizontally */ /* margin: 0 auto; */
+}
+
+#customer-info-container {
+    width: 25%; /* Adjust the width as needed */
+    margin: 0 auto; /* Center horizontally */
+}
+
+#form-container {
+    text-align: center; /* Center-align text */
+    padding: 20px; /* Add some padding for better visual appeal */
+    background-color: #f0f0f0; /* Light gray background color */
+}
+
+#stat-container {
+    padding: 20px; /* Add some padding for better visual appeal */
+    background-color: #f0f0f0; /* Light gray background color */
+}
+
+form {
+    display: inline-block; /* Display the form as an inline block */
+    text-align: left; /* Align text to the left within the form */
+}
+
+.form-group {
+    margin-bottom: 20px; /* Tämä käytössä newcustomer html sivussa */
+}
+
+label {
+    display: block; /* Make labels block elements for better spacing */
+    margin-bottom: 5px; /* Add space between labels and input elements */
+}
+
+input {
+    width: 100%; /* Make input elements take up the full width of the form */
+    box-sizing: border-box; /* Include padding and border in the element's total width */
+    margin-bottom: 10px; /* Add space between input elements */
+}
+
+input[type="submit"] {
+    width: auto; /* Set the submit button width to auto (default) */
+    margin-top: 10px; /* Add space above the submit button */
+}
+
+/* ################################################## */
+
+/* Plot styles */
+#plots {
+    display: flex;
+}
+
+.plot {
+    flex: 1 30px; /* 1.0; */
+    border: 1.5px solid black;
+    box-sizing: border-box;
+}
+
+/* ################################################## */
+
+/* Additional styles for better visual appeal */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+}
+
+strong {
+    display: inline-block;
+    width: 120px; /* Adjust the width as needed */
+}
+
+/* ################################################## */
+
+/* Grouppi styles */
+
+.radio-group {
+    display: flex;
+    flex-direction: row; /* Stack items vertically */
+    gap: 0px; /* Adjust the gap between radio buttons */
+}
+
+/* ################################################## */
+
+/* Border styles, käytössä notes html filessä */
+
+.bordered-area {
+    border: 1px solid black;
+    padding: 5px; /* Add some padding for better visual appeal */
+    margin-bottom: 10px; /* Add space between the bordered areas */
+}
