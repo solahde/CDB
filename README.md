@@ -11,4 +11,4 @@ In the app users can:
 - modify the customers information in the database if modification is needed
 - create a new meeting with a selected customer
 - see notes that other users of the app has left from meetings with the selected customers
-- see visualized statistics from the previous meetings that the whole group has collectively done with the customers
+- see visualized statistics from the previous meetings that the whole team has collectively done with the customers
