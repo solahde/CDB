@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New customer creation</title>
+    <link rel="stylesheet" href="static/styles.css">
+</head>
+
+<body>
+
+    <div id="header_3">
+        <h1>Create a New Customer</h1>
+    </div>
+
+    <div id="menu-container">
+        <a href="/" class="bigger-link">Go back to the customer list</a>
+    <hr>
+    </div>
+
+    <div id="form-container">
+        <form method="POST" action="/newcustomer" class="form-container">
+
+            <div class="form-group">
+                <label for="name">Customer's Name</label>
+                <input type="text" name="name" id="name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="sex">Sex</label>
+                <div class="radio-group">
+                    <input type="radio" name="sex" id="female" value="1" required>
+                    <label for="female">Female</label>
+
+                    <input type="radio" name="sex" id="male" value="2" required>
+                    <label for="male">Male</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="language">Language</label>
+                <select name="language" id="language" required>
+                    <option value="English">English</option>
+                    <option value="Mandarin">Mandarin</option>
+                    <option value="Hindi">Hindi</option>
+                    <option value="Spanish">Spanish</option>
+                    <option value="French">French</option>
+                    <option value="Arabic">Arabic</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="age_group">Age Group</label>
+                <select name="age_group" id="age_group" required>
+                    <option value="1">18-25</option>
+                    <option value="2">26-35</option>
+                    <option value="3">36-45</option>
+                    <option value="4">46-55</option>
+                    <option value="5">Over 55</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="text" name="phone" id="phone" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email Account</label>
+                <input type="text" name="email" id="email" required>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Create a Customer">
+            </div>
+
+        </form>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login to the App</title>
+    <link rel="stylesheet" href="static/styles.css">
+</head>
+<body>
+
+<div id="header_1">
+    <h1>Log in to the App</h1>
+</div>
+
+<div id="form-container">
+    <form method="POST" action="/login" class="form-container">
+
+        <label for="username">Username:</label>
+        <input type="text" name="username" id="username" required>
+        <p>
+
+        <label for="password">Password:</label>
+        <input type="password" name="password" id="password" required>
+        <p>
+
+        <input type="submit" value="Log in">
+    </form>
+</div>
+
+<div id="text">
+    If you dont have an account yet, you can create one <a href="/register">from here</a> 
+</div>
+
+</body>
+</html>

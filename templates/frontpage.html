@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to The APP</title>
+    <link rel="stylesheet" href="static/styles.css">
+</head>
+<body>
+
+<div id="header_1">
+{% if "user_id" in session %}
+    <h1>Welcome to the app {{ session["username"]|default('Unknown') }}!</h1>
+    The app has information about {{ number }} unique customers at the moment
+{% endif %}
+</div>
+
+<div id="menu-container">
+<a href="/newcustomer" class="bigger-link">Create a new customer</a> |
+<a href="/stats" class="bigger-link">See meeting statistics</a> |
+<a href="/logout" class="bigger-link">Log out</a>
+<hr>
+</div>
+
+<div id="customer-info-container">
+{% if customers %}
+    {% for c in customers %}
+        <p>
+            <strong>Name:</strong> {{ c.name }}<br>
+
+            <strong>Sex:</strong> {{ c.sex }}<br>
+
+            <strong>Language:</strong> {{ c.language }}<br>
+
+            <strong>Age group:</strong> {{ c.age_group }}<br>
+
+            <strong>Phone:</strong> {{ c.phone }}<br>
+
+            <strong>Email:</strong> {{ c.email }}<br>
+
+            <br>
+
+            <a href="/newmeeting/{{ c.id }}" class="smaller-link">New meeting with this customer</a> <br>
+            <a href="/seenotes/{{ c.id }}" class="smaller-link">See notes about this customer</a> <br>
+            <a href="/modifycustomer/{{ c.id }}" class="smaller-link">Modify this customers information</a> <br>
+            <hr>
+        </p>
+    {% endfor %}
+{% endif %}
+</div>
+
+</body>
+</html>
